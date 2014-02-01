@@ -1,0 +1,8 @@
+extends profile-layout
+
+block widget
+	#fav-wrapper
+		if activities.length > 0
+			include includes/post
+		else 
+			.empty-msg(style='text-align:center; margin:10px 0px;') You do not have any favorites yet :P .

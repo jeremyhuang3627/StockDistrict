@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html><head><title></title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=320, target-densitydpi=device-dpi">
+<style type="text/css">
+@media only screen and (max-width: 660px) { 
+table[class=w0], td[class=w0] { width: 0 !important; }
+table[class=w10], td[class=w10], img[class=w10] { width:10px !important; }
+table[class=w15], td[class=w15], img[class=w15] { width:5px !important; }
+table[class=w30], td[class=w30], img[class=w30] { width:10px !important; }
+table[class=w60], td[class=w60], img[class=w60] { width:10px !important; }
+table[class=w125], td[class=w125], img[class=w125] { width:80px !important; }
+table[class=w130], td[class=w130], img[class=w130] { width:55px !important; }
+table[class=w140], td[class=w140], img[class=w140] { width:90px !important; }
+table[class=w160], td[class=w160], img[class=w160] { width:180px !important; }
+table[class=w170], td[class=w170], img[class=w170] { width:100px !important; }
+table[class=w180], td[class=w180], img[class=w180] { width:80px !important; }
+table[class=w195], td[class=w195], img[class=w195] { width:80px !important; }
+table[class=w220], td[class=w220], img[class=w220] { width:80px !important; }
+table[class=w240], td[class=w240], img[class=w240] { width:180px !important; }
+table[class=w255], td[class=w255], img[class=w255] { width:185px !important; }
+table[class=w275], td[class=w275], img[class=w275] { width:135px !important; }
+table[class=w280], td[class=w280], img[class=w280] { width:135px !important; }
+table[class=w300], td[class=w300], img[class=w300] { width:140px !important; }
+table[class=w325], td[class=w325], img[class=w325] { width:95px !important; }
+table[class=w360], td[class=w360], img[class=w360] { width:140px !important; }
+table[class=w410], td[class=w410], img[class=w410] { width:180px !important; }
+table[class=w470], td[class=w470], img[class=w470] { width:200px !important; }
+table[class=w580], td[class=w580], img[class=w580] { width:280px !important; }
+table[class=w640], td[class=w640], img[class=w640] { width:300px !important; }
+table[class*=hide], td[class*=hide], img[class*=hide], p[class*=hide], span[class*=hide] { display:none !important; }
+table[class=h0], td[class=h0] { height: 0 !important; }
+p[class=footer-content-left] { text-align: center !important; }
+#headline p { font-size: 30px !important; }
+.article-content, #left-sidebar{ -webkit-text-size-adjust: 90% !important; -ms-text-size-adjust: 90% !important; }
+.header-content, .footer-content-left {-webkit-text-size-adjust: 80% !important; -ms-text-size-adjust: 80% !important;}
+img { height: auto; line-height: 100%;}
+ } 
+#outlook a { padding: 0; }	
+body { width: 100% !important; }
+.ReadMsgBody { width: 100%; }
+.ExternalClass { width: 100%; display:block !important; } 
+body { background-color: #ececec; margin: 0; padding: 0; }
+img { outline: none; text-decoration: none; display: block;}
+br, strong br, b br, em br, i br { line-height:100%; }
+h1, h2, h3, h4, h5, h6 { line-height: 100% !important; -webkit-font-smoothing: antialiased; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: blue !important; }
+h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {	color: red !important; }
+h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: purple !important; }
+  
+table td, table tr { border-collapse: collapse; }
+.yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span {
+color: black; text-decoration: none !important; border-bottom: none !important; background: none !important;
+}	
+code {
+  white-space: normal;
+  word-break: break-all;
+}
+#background-table { background-color: #ececec; }
+#top-bar { border-radius:6px 6px 0px 0px; -moz-border-radius: 6px 6px 0px 0px; -webkit-border-radius:6px 6px 0px 0px; -webkit-font-smoothing: antialiased; background-color: #043948; color: #e7cba3; }
+#top-bar a { font-weight: bold; color: #e7cba3; text-decoration: none;}
+#footer { border-radius:0px 0px 6px 6px; -moz-border-radius: 0px 0px 6px 6px; -webkit-border-radius:0px 0px 6px 6px; -webkit-font-smoothing: antialiased; }
+body, td { font-family: HelveticaNeue, sans-serif; }
+.header-content, .footer-content-left, .footer-content-right { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
+.header-content { font-size: 12px; color: #e7cba3; }
+.header-content a { font-weight: bold; color: #e7cba3; text-decoration: none; }
+#headline p { color: #ffffff; font-family: HelveticaNeue, sans-serif; font-size: 36px; text-align: center; margin-top:0px; margin-bottom:30px; }
+#headline p a { color: #ffffff; text-decoration: none; }
+.article-title { font-size: 18px; line-height:24px; color: #9a9661; font-weight:bold; margin-top:0px; margin-bottom:18px; font-family: HelveticaNeue, sans-serif; }
+.article-title a { color: #9a9661; text-decoration: none; }
+.article-title.with-meta {margin-bottom: 0;}
+.article-meta { font-size: 13px; line-height: 20px; color: #ccc; font-weight: bold; margin-top: 0;}
+.article-content { font-size: 13px; line-height: 18px; color: #444444; margin-top: 0px; margin-bottom: 18px; font-family: HelveticaNeue, sans-serif; }
+.article-content a { color: #00707b; font-weight:bold; text-decoration:none; }
+.article-content img { max-width: 100% }
+.article-content ol, .article-content ul { margin-top:0px; margin-bottom:18px; margin-left:19px; padding:0; }
+.article-content li { font-size: 13px; line-height: 18px; color: #444444; }
+.article-content li a { color: #00707b; text-decoration:underline; }
+.article-content p {margin-bottom: 15px;}
+.footer-content-left { font-size: 12px; line-height: 15px; color: #e2e2e2; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-left a { color: #e7cba3; font-weight: bold; text-decoration: none; }
+.footer-content-right { font-size: 11px; line-height: 16px; color: #e2e2e2; margin-top: 0px; margin-bottom: 15px; }
+.footer-content-right a { color: #e7cba3; font-weight: bold; text-decoration: none; }
+#footer { background-color: #3498DB; color: #e2e2e2; }
+#footer a { color: #e7cba3; text-decoration: none; font-weight: bold; }
+#permission-reminder { white-space: normal; }
+#street-address { color: #e7cba3; white-space: normal; }
+</style>
+<!--[if gte mso 9]>
+<style _tmplitem="140" >
+.article-content ol, .article-content ul {
+   margin: 0 0 0 24px !important;
+   padding: 0 !important;
+   list-style-position: inside !important;
+}
+</style>
+<![endif]--><meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="dation">
+<link href="https://css.createsend1.com/css/social.min.css?h=A3DB20FChead708" media="screen,projection" rel="stylesheet" type="text/css">
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style></head><body style="width:100% !important;background-color:#ececec;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-family:HelveticaNeue, sans-serif;"><table width="100%" cellpadding="0" cellspacing="0" border="0" id="background-table" style="background-color:#ececec;">
+	<tbody><tr style="border-collapse:collapse;">
+		<td align="center" bgcolor="#ececec" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+        	<table class="w640" width="640" cellpadding="0" cellspacing="0" border="0" style="margin-top:0;margin-bottom:0;margin-right:10px;margin-left:10px;">
+            	<tbody><tr style="border-collapse:collapse;"><td class="w640" width="640" height="20" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+                
+            	<tr style="border-collapse:collapse;">
+                	<td class="w640" width="640" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+                        <table id="top-bar" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#3498DB" style="border-radius:6px 6px 0px 0px;-moz-border-radius:6px 6px 0px 0px;-webkit-border-radius:6px 6px 0px 0px;-webkit-font-smoothing:antialiased;background-color:#043948;color:#e7cba3;">
+    <tbody><tr style="border-collapse:collapse;">
+        <td class="w15" width="15" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td class="w325" width="350" valign="middle" align="left" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+            <table class="w325" width="350" cellpadding="0" cellspacing="0" border="0">
+                <tbody><tr style="border-collapse:collapse;"><td class="w325" width="350" height="8" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+            </tbody></table>
+            <div class="header-content" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;color:#e7cba3;"><a href="http://stocknotes.createsend1.com/t/d-e-chjsy-l-r/" style="font-weight:bold;color:#e7cba3;text-decoration:none;">Web Version</a><span class="hide">&nbsp;&nbsp;|&nbsp; <a href="http://stocknotes.updatemyprofile.com/d-l-2AD73FFF-l-y" lang="en" style="font-weight:bold;color:#e7cba3;text-decoration:none;">Update preferences</a>&nbsp;&nbsp;|&nbsp; <a href="http://stocknotes.createsend1.com/t/d-u-chjsy-l-j/" style="font-weight:bold;color:#e7cba3;text-decoration:none;">Unsubscribe</a></span></div>
+            <table class="w325" width="350" cellpadding="0" cellspacing="0" border="0">
+                <tbody><tr style="border-collapse:collapse;"><td class="w325" width="350" height="8" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+            </tbody></table>
+        </td>
+        <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td class="w255" width="255" valign="middle" align="right" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+            <table class="w255" width="255" cellpadding="0" cellspacing="0" border="0">
+                <tbody><tr style="border-collapse:collapse;"><td class="w255" width="255" height="8" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+            </tbody></table>
+            <table cellpadding="0" cellspacing="0" border="0">
+    <tbody><tr style="border-collapse:collapse;">
+        
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><a href="/t/d-fb-chjsy-l-t/?act=wv" rel="cs_facebox" style="font-weight:bold;color:#e7cba3;text-decoration:none;" cs_likeurl="/t/d-fb-chjsy-l-t/?act=like"><img src="https://img.createsend1.com/img/templatebuilder/like-glyph.png" border="0" width="8" height="14" alt="Facebook icon" =""="" style="outline-style:none;text-decoration:none;display:block;"></a></td>
+        <td width="3" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><div class="header-content" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;color:#e7cba3;"><a href="/t/d-fb-chjsy-l-i/?act=wv" rel="cs_facebox" style="font-weight:bold;color:#e7cba3;text-decoration:none;" cs_likeurl="/t/d-fb-chjsy-l-i/?act=like">Like</a></div></td>
+        
+        
+        <td class="w10" width="10" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><a href="http://stocknotes.createsend1.com/t/d-tw-chjsy-l-d/" style="font-weight:bold;color:#e7cba3;text-decoration:none;"><img src="https://img.createsend1.com/img/templatebuilder/tweet-glyph.png" border="0" width="17" height="13" alt="Twitter icon" =""="" style="outline-style:none;text-decoration:none;display:block;"></a></td>
+        <td width="3" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><div class="header-content" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;color:#e7cba3;"><a href="http://stocknotes.createsend1.com/t/d-tw-chjsy-l-h/" style="font-weight:bold;color:#e7cba3;text-decoration:none;">Tweet</a></div></td>
+        
+        
+        <td class="w10" width="10" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><a href="http://stocknotes.forwardtomyfriend.com/d-l-2AD73FFF-chjsy-l-k" lang="en" style="font-weight:bold;color:#e7cba3;text-decoration:none;"><img src="https://img.createsend1.com/img/templatebuilder/forward-glyph.png" border="0" width="19" height="14" alt="Forward icon" =""="" style="outline-style:none;text-decoration:none;display:block;"></a></td>
+        <td width="3" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        <td valign="middle" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"><div class="header-content" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;color:#e7cba3;"><a href="http://stocknotes.forwardtomyfriend.com/d-l-2AD73FFF-chjsy-l-u" lang="en" style="font-weight:bold;color:#e7cba3;text-decoration:none;">Forward</a></div></td>
+        
+    </tr>
+</tbody></table>
+            <table class="w255" width="255" cellpadding="0" cellspacing="0" border="0">
+                <tbody><tr style="border-collapse:collapse;"><td class="w255" width="255" height="8" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+            </tbody></table>
+        </td>
+        <td class="w15" width="15" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+    </tr>
+</tbody></table>
+                        
+                    </td>
+                </tr>
+                <tr style="border-collapse:collapse;">
+                <td id="header" class="w640" width="640" align="center" bgcolor="#3498DB" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+    
+    <table class="w640" width="640" cellpadding="0" cellspacing="0" border="0">
+        <tbody><tr style="border-collapse:collapse;"><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w580" width="580" height="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+        <tr style="border-collapse:collapse;">
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+            <td class="w580" width="580" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+                <div align="center" id="headline">
+                    <p style="color:#ffffff;font-family:HelveticaNeue, sans-serif;font-size:36px;text-align:center;margin-top:0px;margin-bottom:30px;">
+                        <strong>StockNotes Confirmation</strong>
+                    </p>
+                </div>
+            </td>
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        </tr>
+    </tbody></table>
+    
+    
+</td>
+                </tr>
+                
+                <tr style="border-collapse:collapse;"><td class="w640" width="640" height="30" bgcolor="#ffffff" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+                <tr id="simple-content-row" style="border-collapse:collapse;"><td class="w640" width="640" bgcolor="#ffffff" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+    <table class="w640" width="640" cellpadding="0" cellspacing="0" border="0">
+        <tbody><tr style="border-collapse:collapse;">
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+            <td class="w580" width="580" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+                
+                        <table class="w580" width="580" cellpadding="0" cellspacing="0" border="0">
+                            <tbody><tr style="border-collapse:collapse;">
+                                <td class="w580" width="580" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+                                    <p align="left" class="article-title" style="font-size:18px;line-height:24px;color:#9a9661;font-weight:bold;margin-top:0px;margin-bottom:18px;font-family:HelveticaNeue, sans-serif;">Click on the link below to validate your email</p>
+                                    <div align="left" class="article-content" style="font-size:13px;line-height:18px;color:#444444;margin-top:0px;margin-bottom:18px;font-family:HelveticaNeue, sans-serif;">
+                                        <p style="margin-bottom:15px;word-wrap: break-word; word-break: break-all;"><%=url%></p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="border-collapse:collapse;"><td class="w580" width="580" height="10" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+                        </tbody></table>
+                    
+            </td>
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        </tr>
+    </tbody></table>
+</td></tr>
+                <tr style="border-collapse:collapse;"><td class="w640" width="640" height="15" bgcolor="#ffffff" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+                
+                <tr style="border-collapse:collapse;">
+                <td class="w640" width="640" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+    <table id="footer" class="w640" width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#3498DB" style="border-radius:0px 0px 6px 6px;-moz-border-radius:0px 0px 6px 6px;-webkit-border-radius:0px 0px 6px 6px;-webkit-font-smoothing:antialiased;background-color:#3498DB;color:#e2e2e2;">
+        <tbody><tr style="border-collapse:collapse;"><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w580 h0" width="360" height="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w0" width="60" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w0" width="160" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+        <tr style="border-collapse:collapse;">
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+            <td class="w580" width="360" valign="top" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+            <span class="hide"><p id="permission-reminder" align="left" class="footer-content-left" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;line-height:15px;color:#e2e2e2;margin-top:0px;margin-bottom:15px;white-space:normal;"></p></span>
+            <p align="left" class="footer-content-left" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:12px;line-height:15px;color:#e2e2e2;margin-top:0px;margin-bottom:15px;"><a href="http://stocknotes.updatemyprofile.com/d-l-2AD73FFF-l-o" lang="en" style="color:#e7cba3;text-decoration:none;font-weight:bold;">Edit your subscription</a> | <a href="http://stocknotes.createsend1.com/t/d-u-chjsy-l-b/" style="color:#e7cba3;text-decoration:none;font-weight:bold;">Unsubscribe</a></p>
+            </td>
+            <td class="hide w0" width="60" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+            <td class="hide w0" width="160" valign="top" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;">
+            <p id="street-address" align="right" class="footer-content-right" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;font-size:11px;line-height:16px;margin-top:0px;margin-bottom:15px;color:#e7cba3;white-space:normal;"></p>
+            </td>
+            <td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td>
+        </tr>
+        <tr style="border-collapse:collapse;"><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w580 h0" width="360" height="15" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w0" width="60" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w0" width="160" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td><td class="w30" width="30" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+    </tbody></table>
+</td>
+                </tr>
+                <tr style="border-collapse:collapse;"><td class="w640" width="640" height="60" style="font-family:HelveticaNeue, sans-serif;border-collapse:collapse;"></td></tr>
+            </tbody></table>
+        </td>
+	</tr>
+</tbody></table>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter.php?version=28#channel=fbe274ff8&amp;channel_path=%2Ft%2FViewEmail%2Fd%2FE8F21983C396A74D%2FC67FD2F38AC4859C%2F%3Ffb_xd_fragment%23xd_sig%3Df84c48cdc%26&amp;origin=https%3A%2F%2Fstocknotes.createsend.com" style="border: none;"></iframe></div></div></div>
+<script src="https://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<script type="text/javascript" src="https://js.createsend1.com/js/jquery-1.7.2.min.js?h=C99A4659head708"></script>
+<script type="text/javascript" src="https://js.createsend1.com/js/track.min.js?h=6F6B89E3head708"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    CS.WebVersion.setup({"LikeActionBase":"/t/d-fb-chjsy-l-","IsSubscriber":false});
+});
+</script>
+
+    <div id="facebox" style="display:none;">       <div class="popup">         <div class="content">         </div>         <div id="closeBox">           <a href="#" class="close">Close</a>         </div>       </div>     </div></body></html>

@@ -1,0 +1,37 @@
+mixin user_box(user)
+	li
+		.user-box
+			.user-img
+				img.shadow(src='#{user.image_dir_resized}')
+			.user-detail
+				.user-name 
+					a(href='/user?id='+'#{user._id}') #{user.fn}
+				.rep Rep #{user.popularity}
+				.abt #{user.abt}
+
+mixin stock_box(stock)
+	li 
+		.hot_stock
+			.hot_stock_symbol #{stock.symbol}
+			.hotness #{stock.count}
+
+extends profile-layout
+
+block widget
+	link(rel='stylesheet', href='/css/rankings.css')
+	#pop-users-stocks
+		.pop-users
+			.pop-users-title.title Top 20 users:
+			ul
+				- var users = users_list
+				- for(var i=0;i<users.length;i++)
+					+user_box(users[i])
+		.pop-stocks
+			.pop-stocks-title.title Top 20 stocks:
+			ul
+				- var stocks = stocks_list
+				- for(var i=0;i<stocks.length;i++)
+					+stock_box(stocks[i])
+	#pop-posts
+		.pop-posts-title.title Top 20 posts:
+		include includes/post

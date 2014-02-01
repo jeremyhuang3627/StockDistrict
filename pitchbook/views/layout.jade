@@ -1,0 +1,99 @@
+doctype html
+html
+  head
+    style
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; }
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet', href='/bootstrap/css/prettify.css')
+    link(rel='shortcut icon', href='/images/favicon.ico')
+    link(rel='stylesheet', href='/css/flat-ui.css')
+    link(rel='stylesheet', href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
+    link(type="text/css" rel="stylesheet" href="/css/rickshaw.min.css")
+    link(rel='stylesheet', href='/css/dropzone.css')
+    link(rel='stylesheet', href='/css/prettyPhoto.css')
+    link(rel='stylesheet', href='/css/searchbar.css')
+    link(rel='stylesheet', href='/css/style.css')
+    script(src='http://code.jquery.com/jquery-1.9.1.js' type='text/javascript')
+    script(src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+    script(src='/js/csvjson.min.js')
+    script(src='/js/Chart.min.js')
+    script(src='/js/ajaxFormSubmit.js')
+    script(src='/js/jquery.tabslet.min.js')
+    script(src='/js/jquery.bpopup.min.js')
+    script(src='/js/vTicker.js')
+    script(src='/js/jquery.prettyPhoto.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/js/jquery.infinitescroll.min.js')
+    script(src='/js/essay-editor.js')
+    script(src='/js/editor.js')
+    script(src='/js/searchbar.js')
+    script(src='/js/general.js')
+  body
+    script
+        var socket = io.connect('http://localhost:3000');
+    noscript 
+        style
+            html{
+                display:block
+            }
+        p.ie6
+            |This website cannot be displayed because your 
+            |browser has disabled javascript. Please turn 
+            | javascript before returning to our website.
+    .editor-box.essay-box.shadow
+        .editor-wrapper
+            .editor-toolbar
+                .tools
+                    a(data-edit='bold') B
+                    a(data-edit='underline') U
+                .close-editor-wrapper
+                    a.close-editor Close
+            .essay-title-editor(contenteditable="true")
+            .editor(contenteditable="true")
+            .send-essay
+                button.btn.btn-info.send-essay send
+    .editor-box.pitch-box.shadow
+        .editor-wrapper
+            .editor-toolbar
+                .tools
+                    a(data-edit='bold') B
+                    a(data-edit='underline') U
+                .close-editor-wrapper
+                    a.close-editor Close
+            .pitch-stock(contenteditable="true" data-ph="Enter the stock you want to pitch")
+            .pitch-editor-wrapper
+                    .tabs
+                        ul.horizontal
+                            li
+                                a(href='#recommendation') Recommendation
+                            li
+                                a(href='#background') Company Background
+                            li
+                                a(href='#thesis') Investment Thesis
+                            li
+                                a(href='#catalysts') Catalysts
+                            li
+                                a(href='#valuation') Valuation
+                            li
+                                a(href='#risks') Risk factors
+                        #recommendation.pitch-editor(contenteditable="true" data-ph='Are you long or short this stock? What do you think it’s worth and how much would you pay for it?')
+
+                        #background.pitch-editor(contenteditable="true" data-ph='Introduce what the company does and state what its current market cap and valuation multiples are.')
+
+                        #thesis.pitch-editor(contenteditable="true" data-ph='Give 2-3 points about why you think the stock is price imperfectly – these can be both quantitative and qualitative factors, but they must be specific to the company (i.e. don’t say, “Well, the economy could crash…”). This will be the bulk of your presentation or write-up.')
+
+                        #catalysts.pitch-editor(contenteditable="true" data-ph='So you think the stock is priced imperfectly and is worth $X when its current share price is $Y… but what will push it to $X?')
+
+                        #valuation.pitch-editor(contenteditable="true" data-ph='Support your view of what the company is worth by using the standard methodologies: public comps, precedent transactions, DCF or other intrinsic value analyses, and so on.')
+
+                        #risks.pitch-editor(contenteditable="true" data-ph='All investments have potential downsides as well, and in this section you discuss those and explain that, while they exist, there’s still a greater chance of your own thesis being true.')
+            .send-pitch
+                button.btn.btn-info.send-pitch send
+    .tooltip-info-box.border
+    .news-popup-box.shadow
+        .close-popup-box.pointer close
+        .news-symbol
+        .news-content.hori-equal-margin
+    .image-box
+    block content
+        

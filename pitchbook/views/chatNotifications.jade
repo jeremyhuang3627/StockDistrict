@@ -1,0 +1,61 @@
+mixin notification(noti)
+	.noti-chat-wrapper
+		.noti
+			a(href='/user?#{noti.remote_user_id}') #{noti.remote_user_fn}
+			case noti.type
+				when "comment"
+					span   commented on your 
+				when "like"
+					span  liked your
+				when "share"
+					span  shared your
+				when "fav"
+					span  added to favorites your 
+			a(href='/status?id=#{noti.activity_id}')  post
+			case noti.type
+				when "comment"
+					span   (Rep + 0)
+				when "like"
+					span  (Rep + 5)
+				when "share"
+					span  (Rep + 5)
+				when "fav"
+					span  (Rep + 15)
+		.time_stamp
+			span #{noti.time_stamp}
+
+mixin chat(cg)
+	.noti-chat-wrapper
+		.chat-drop-down-item
+			.chat-icon
+				img.shadow(src='#{cg.image_dir}')
+			.chat-body
+				.user-info(id='#{cg._id}') #{cg.fn}
+				.chat-drop-down-body #{cg.msg}
+
+extends profile-layout
+
+block widget
+	link(rel='stylesheet', href='/css/chatNoti.css')
+	script
+		$(function(){
+			$("#noti-chat-content").infinitescroll({
+				nextSelector: "#pager a",
+				navSelector: "#pager",
+				itemSelector:".noti-chat-wrapper",
+			});
+		})
+	#noti-chat-title
+		if type == "notifications"
+			span Notifications Center
+		else if type == "chats"
+			span All Chats
+	#noti-chat-content
+		if type == "notifications"
+			- for(var i=0;i<notifications.length;i++)
+				+notification(notifications[i])
+		else if type == "chats"
+			- for(var i=0;i<chatsGroups.length;i++)
+				+chat(chatsGroups[i])
+	#pager
+		a(href='/notification?t=#{type}&p=#{parseInt(page) + 1}') Next

@@ -1,0 +1,38 @@
+extends plain-layout
+
+block content
+    script
+        $(function(){
+            $(".login-btn").on("click",function(){
+                var e = $(".user").val();
+                var p = $(".pass").val();
+                var ok = true;
+                if(e.length == 0){
+                    $(".err-msg-email").html("Email cannot be empty.");
+                    ok = false;
+                }else if(!validateEmail(e)){
+                    $(".err-msg-email").html("This does not look like an email.");
+                    ok = false;
+                }
+
+                if(p.length == 0)
+                {
+                    $(".err-msg-pass").html("password cannot be empty.");
+                    ok = false;
+                }
+
+                if(ok)
+                {
+                    $(".loginform").submit();
+                }
+            })
+        });
+    .validate-login
+        span Your email has been validated. You can now login.
+        form.loginform(method='POST' action='/login')
+            input.form-control.user(type="text" placeholder="Email" name = "username")
+            .err-msg-email
+            input.form-control.pass(type="password" placeholder="password" name="password")
+            .err-msg-pass
+        button.btn.btn-info.login-btn login
+        .server-res

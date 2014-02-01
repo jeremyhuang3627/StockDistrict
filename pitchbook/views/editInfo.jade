@@ -1,0 +1,148 @@
+extends layout
+
+block content
+    style
+        body{
+            background-color: #F0F0F0;
+        }
+        #chart_container {
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        #chart {
+                position: relative;
+                left: 40px;
+        }
+        #y_axis {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 40px;
+        }
+    link(rel='stylesheet', href='/css/editInfo.css')
+    script(src='/js/jquery.tabslet.min.js')
+    script(src='/js/dropzone.js')
+    script(src='/js/editInfo.js')
+    .wrapper-pb-account
+        include includes/topbar
+        .tabs.main-tab
+            ul.horizontal
+                li
+                    a(href='#block1') Personal Information
+                li
+                    a(href='#block2') Password and Emails
+            #block1.content-tab
+                .personal-info
+                    .p-info-wrapper 
+                        span Username:
+                        input.form-control.username(value="#{user.fn}")
+                        span Profile Image:
+                        .tabs
+                            ul.horizontal
+                                li.small
+                                    a(href='#originPic') Profile Pic
+                                li.small
+                                    a(href='#upload') Upload New One
+                            #originPic.dotted_border
+                                img(src="#{user.image_dir_resized}")
+                            #upload.dotted_border
+                                form.dropzone#my-awesome-dropzone(action="/proPicUpload")
+                .self_description
+                    .self_head Self Description 
+                    .self_description_body
+                        textarea.form-control #{user.abt}
+                    button.btn.btn-info.save-info save
+                    .response
+                    .ajax-loader
+                        img(src='/images/icons/gif/snake.gif')
+            #block2.content-tab
+                .email-pw-wrapper
+                    if !user.oauthId
+                        .password-box.password-change
+                            .pw-title Password Change
+                            .pw-input
+                                table
+                                    tr
+                                        td
+                                            span Enter your current password
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.curr_pw.short-input(type="password")
+                                        td
+                                            .err-msg.current-password
+                                    tr    
+                                        td
+                                            span Enter your new password
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.new_pw.short-input(type="password")
+                                        td
+                                            .err-msg.new_password
+                                    tr
+                                        td
+                                            span Enter your new password again
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.new_pw_repeat.short-input(type="password")
+                                        td
+                                            .err-msg.new_password_repeat
+                                    tr
+                                        td
+                                            button.btn.btn-info.pw-change Change my password
+                                        td
+                                            .server-msg
+                        .password-box.password-reset
+                            .pw-title Forget Password ? 
+                            .pw-input
+                                table
+                                    tr
+                                        td
+                                            span Enter the email address that you registered with us:
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.email.short-input(type="text")
+                                        td
+                                    tr
+                                        td
+                                            button.btn.btn-info.pw-reset Send verification email
+                                        td
+                                            .server-msg
+                        .email-change
+                            .email-title Email Change
+                            .email-current 
+                                span Your current email is : 
+                                span #{user.email}
+                            .email-input
+                                table
+                                    tr
+                                        td
+                                            span Enter your password:
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.email-change-pass.short-input(type="password")
+                                        td
+                                            .err-msg.email-change-pass-err
+                                    tr
+                                        td
+                                            span Enter your New Email Address:
+                                        td
+                                    tr
+                                        td
+                                            input.form-control.email-change-input.short-input(type="text")
+                                        td
+                                            .err-msg.email-change-err
+                                    tr
+                                        td
+                                            button.btn.btn-info.email-change-btn Send verification email
+                                        td
+                                            .server-msg                                
+                    else
+                        .no-email-pw-msg
+                            .msg-content
+                                .msg-title
+                                    span You need to register an account before you can change your password :D.

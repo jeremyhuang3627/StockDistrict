@@ -1,0 +1,15 @@
+#slidePanel_wrapper
+    #slideHandle(data-state="off")
+    #slidePanel
+        - var subscribe_to_users = JSON.parse(subscribe_to)
+        - for (var i in subscribe_to_users)
+            .subscribe_to_wrapper
+                .user-link
+                    .profile-img
+                            img.shadow(src='#{subscribe_to_users[i].image_dir_resized}')
+                            .state.offline
+                    .user-box
+                        .user-info(id="#{subscribe_to_users[i]._id}") #{subscribe_to_users[i].fn}
+                        .rep Rep #{subscribe_to_users[i].popularity}
+    .search-user-bar
+        input.search-user-input(placeholder='search a user');

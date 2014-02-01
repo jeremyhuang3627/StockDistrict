@@ -1,0 +1,13 @@
+#box-wrapper
+    .msg-box
+        .msg-wrapper
+            .msg(data-ph="what's on your mind ? (type $ sign to query stock tikcers)" contenteditable="true")
+            .stock-picker
+                input.form-control.add-stock-in-text-bar(type="text" placeholder="enter stock ticker")
+                button.btn.btn-info.add-stock-in-text Add
+        .msg-controls 
+            a.essay(href='#' title='Write a long essay')
+                img(src='/images/icons/png/essay.png')
+            a.pitch(href='#' title='Give a pitch')
+                img(src='/images/icons/png/pitch.png')
+            button.btn.btn-info.send send

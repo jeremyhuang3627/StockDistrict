@@ -1,0 +1,49 @@
+.user-img
+{
+	float: left;
+}
+
+.user-detail
+{
+	float: left;
+}
+
+.user-box
+{
+	margin-left: 20px;
+}
+
+.user-box,#pop-users-stocks{
+	overflow: auto;
+}
+
+.pop-users
+{
+	width: 50%;
+	float: left;
+}
+
+.pop-stocks
+{
+	width: 50%;
+	float: right;
+}
+
+.title
+{
+	font-size: 25px;
+	padding-top: 20px;
+	margin-left: 20px;
+}
+
+.hot_stock{
+	width: 30%;
+	margin-left: 50px;
+	padding: 5px 0px;
+}
+
+.pop-users .user-img img
+{
+	width: 50px;
+	height: auto;
+}

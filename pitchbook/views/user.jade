@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	script
+		$(function(){
+			$("#post-wrapper").infinitescroll({
+				nextSelector: "#pager a",
+				navSelector: "#pager",
+				itemSelector:".post",
+			});
+		})
+	include includes/user_account
+	#pager(style="display:none")
+		a(href='/user?id=#{user._id}&p=#{parseInt(p)+1}') Next

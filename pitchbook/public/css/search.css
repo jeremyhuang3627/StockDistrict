@@ -1,0 +1,59 @@
+.user-wrapper{
+	width: 60%;
+	margin: 10px auto;
+	overflow: auto;
+	min-height: 120px;
+}
+
+#results .post
+{
+	width: 70%;
+	margin: 10px auto;
+}
+
+.user-wrapper:hover{
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+}
+
+.img-name{
+	width: 30%;
+	float: left;
+	text-align: center;
+	font-size: 13px;
+}
+
+.stats-bio .stats
+{
+	float: left;
+}
+
+.follow-btn,.unfollow-btn
+{
+	padding: 5px;
+	font-size: 10px;
+	float: right;
+	margin-right: 10px;
+}
+
+.bio{
+	height: 70%;
+	width: 70%;
+	float: right;
+	margin-top: 5px;
+}
+
+.bio .bio-title
+{
+	font-weight: bold;
+}
+
+.bio .bio-detail
+{
+	height: 70%;
+}
+
+.details{
+	height: 100%;
+}

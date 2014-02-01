@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    script(src='/js/topbar-slidepanel.js')
+    #contact-form.shadow
+        .close-contact-form Close
+        form.contactForm(action='/contact')
+            textarea.border(name = "feedback" placeholder = "tell us about any bugs and any ways to improve this site.")
+            button.btn.btn-info Submit
+        .response
+        .ajax-loader
+            img(src='/images/icons/gif/snake.gif')
+    .wrapper-pb
+        include includes/slide-panel
+        include includes/topbar
+        .globalContainer
+            #content
+                #mainContainer
+                    #leftCol
+                        #left-col-wrapper
+                            #col-section-zero
+                                #profile
+                                    a.pic(href='/account')
+                                        img.shadow(src='#{user.image_dir_resized}')
+                                        span Change
+                                    a.username(href='/account' id='#{user._id}')
+                                        span #{user.fn}
+                                    .reputation 
+                                        img(src='/images/icons/png/ribbon.png')
+                                        span Reputation 
+                                        span.count #{user.popularity}
+                            #col-section-one.col-section
+                                ul
+                                    li
+                                        a(href='/discussions-list')
+                                            img(src='/images/icons/png/mac-computer.png')
+                                            span discussions
+                                    li
+                                        a(href='/fav')
+                                            img(src='/images/icons/png/star.png')
+                                            span favorites
+                                    li
+                                        a(href='/rankings')
+                                            img(src='/images/icons/png/barchart.png')
+                                            span rankings
+                                    li
+                                        a(href='/account')
+                                            img(src='/images/icons/png/tools.png')
+                                            span account
+                                    li
+                                        a(href='/follow?t=following')
+                                            img(src='/images/icons/png/following.png')
+                                            span Following
+                                    li
+                                        a(href='/follow?t=follower')
+                                            img(src='/images/icons/png/followers.png')
+                                            span Followers
+                                    li
+                                        a(class='contactFormLink')
+                                            img(src='/images/icons/png/pen.png')
+                                            span Bug report
+                    #contentCol
+                        block widget
+            #pageFooter

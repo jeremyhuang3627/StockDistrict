@@ -1,0 +1,69 @@
+extends profile-layout
+
+block widget
+    script(src='/js/userHome.js')
+    script(src='/js/right-bar.js')
+    script(src='/js/watch-list.js') 
+    #rightCol
+        #news-box
+            .hotness-rank-box
+                span Most watched stocks
+        #social-box
+            .ajax-loader
+                img(src='/images/icons/gif/snake.gif')
+            .users-wrapper
+                - var users_array = JSON.parse(other_users)
+                - for (var j in users_array)
+                    .user-link 
+                        .name(id="#{users_array[j]._id}")
+                            .user-img
+                                img.shadow(src='#{users_array[j].image_dir_resized}')
+                            .user-info
+                                .user-fn
+                                    a(href='/user?id=#{users_array[j]._id}') #{users_array[j].fn}
+                                .user-rep
+                                    span.rep Rep #{users_array[j].popularity}
+                        button.btn.btn-info.follow follow
+    #contentArea
+        #news-feed-box
+        #watch-list-box
+            #add-stock
+                input.form-control.add-stock-bar(type="text" placeholder="enter stock ticker")
+                button.btn.btn-info.add-stock Add
+            .watch-list-tbl
+                table.watch-list
+                    thead
+                        tr
+                            th Ticker
+                            th Bid
+                            th Ask
+                            th %Change
+                            th Volume
+                        - var stocks_array = JSON.parse(stocks)
+                        - for (var i in stocks_array)
+                          tr.stock-item
+                            td 
+                                span.symbol #{stocks_array[i]}
+                            td 
+                                span.bid 
+                                    img(src='/images/icons/gif/ajax-loader.gif')
+                            td 
+                                span.ask
+                                    img(src='/images/icons/gif/ajax-loader.gif')
+                            td 
+                                span.change
+                                    img(src='/images/icons/gif/ajax-loader.gif')
+                            td 
+                                span.vol
+                                    img(src='/images/icons/gif/ajax-loader.gif')
+                            td  
+                                span.del 
+                                    img(src='/images/icons/png/cross.png') 
+                            td  
+                                span.news-popup 
+                                    img(src='/images/icons/png/news.png')
+        include includes/msg-box
+        #news-feed-notification
+            img(src='/images/icons/png/quote.png')
+            span.unreadMsg
+        include includes/post

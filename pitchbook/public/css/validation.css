@@ -1,0 +1,45 @@
+.validate-login,.banner{
+    margin-left:auto;
+    margin-right:auto;
+    height:500px;
+    width:30%;
+    margin-top:50px;
+}
+
+.validate-login span
+{
+    font-size:15px;
+}
+
+.banner
+{
+    height:auto;
+    margin-top:100px;
+}
+
+.form-control{
+margin-top:20px;
+display:block;
+}
+
+.login-btn-pb
+{
+    float:right;
+    margin-top:10px;
+}
+
+.msg-wrapper
+{
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 150px;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.back-link
+{
+    margin-top: 10px;
+}

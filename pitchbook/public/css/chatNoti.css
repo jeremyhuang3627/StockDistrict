@@ -1,0 +1,28 @@
+.noti-chat-wrapper
+{
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#noti-chat-title span
+{
+	font-size: 25px;
+}
+
+#noti-chat-title
+{
+	width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.time_stamp
+{
+	font-size: 12px;
+}
+
+#pager
+{
+	display: none;
+}

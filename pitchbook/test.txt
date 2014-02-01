@@ -1,0 +1,45 @@
+Screen reader users, click here to turn off Google Instant.
+WebImagesMapsShoppingMoreSearch tools
+About 425,000 results (0.38 seconds) 
+Search Results
+javascript - Read a file one line at a time in node.js? - Stack Overflow
+stackoverflow.com/questions/.../read-a-file-one-line-at-a-time-in-node-js‎
+May 27, 2011 - var Lazy=require("lazy"); new Lazy(process.stdin) .lines .forEach( ... You don't have to open the file, but instead, you have to create a ReadStream ...
+javascript - node.js: read a text file into an array. (Each line an item ...
+stackoverflow.com/.../node-js-read-a-text-file-into-an-array-each-line-an...‎
+Jul 26, 2011 - In any case if you would like to process the file one line at a time you ... readFile(' file.txt', function(err, data) { if(err) throw err; var array = data.
+line-by-line - npm
+https://npmjs.org/package/line-by-line‎
+A NodeJS module that helps you reading large text files, line by line, without buffering the files ... lr.on('end', function () { // All lines are read, file is closed now. });.
+Stephan Steynfaardt : Read large files line by line in node.js
+https://coderwall.com/p/lb7unq‎
+A protip by ssteynfaardt about large files and node.js.
+Readline Node.js v0.10.24 Manual & Documentation
+nodejs.org/api/readline.html‎
+Readline allows reading of a stream (such as process.stdin ) on a line-by-line basis. Note that once you've invoked this module, your node program will not ...
+What is the best way to read a file line-by-line in node.js? - Quora
+www.quora.com/What-is-the-best-way-to-read-a-file-line-by-line-in-nod...‎
+Aug 31, 2010 - This API is apparently too high-level to be part of the node.js API... You must be signed in to read this answer. Continue with GoogleConnected to ...
+nickewing/line-reader · GitHub
+https://github.com/nickewing/line-reader‎
+Jul 19, 2013 - Asynchronous line-by-line file reader for node.js. Contribute to line-reader development by creating an account on GitHub.
+jahewson/node-byline · GitHub
+https://github.com/jahewson/node-byline‎
+Nov 21, 2013 - Line-by-line Stream reader for node.js. Contribute to node-byline development by creating an account on GitHub.
+Read a file line by line in node.js ~ disasterjs
+disasterjs.blogspot.com/2013/07/read-file-line-by-line-in-nodejs.html‎
+Jul 1, 2013 - Read a file; Make sure it's a .k file; Split it line by line; Execute each line ... We just need to import the fs module and call the function readFile: fs.
+Re: [nodejs] reading a file one line at a time - Google Groups
+https://groups.google.com/d/topic/nodejs/MItWrlYgcHo‎
+Dec 30, 2011 - Can the readline module be used to read a file stream one line at a time? It seems that it is mainly intended for reading from stdin, but maybe
+1	
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Next

@@ -1,0 +1,56 @@
+mixin discussionHost(host)
+    .discussion
+        a(href="/discussion?id=" + "#{host._id}")
+            .discussion-upper
+                .host
+                    .host-img
+                        img.shadow(src='#{host.user_image_dir_resized}')
+                    .host-info
+                        .user-info(id='#{host.user_id}') #{host.user_fn}
+                .discussion-details
+                    .discussion-topic
+                        span.topic Topic:  
+                        span.topic-detail #{host.topic}
+                    .discussion-opening #{host.opening}
+            .discussion-lower
+                .popularity Number of comments : #{host.popularity}
+extends profile-layout
+
+block widget
+    link(rel='stylesheet', href='/css/discussionsList.css')
+    script(src='/js/jquery.autoellipsis-1.0.10.min.js')
+    script(src='/js/discussionsList.js')
+    #init-discussion
+        button.btn.btn-info.init-discussion-btn + Initiate an discussion
+    #discussion-builder
+        .editor-box.discussion-box
+            .editor-wrapper
+                .editor-toolbar
+                    .tools
+                        a(data-edit='bold') B
+                        a(data-edit='underline') U
+                        a.sticker(style="position:relative;bottom:2px;")
+                            img(src="/images/icons/png/sticker_small.png");
+                        a.ticker
+                            img(src='/images/icons/png/ticker.png')
+                .essay-title-editor(contenteditable="true" data-ph="Discussion Topic")
+                .editor(contenteditable="true" data-ph="Write something about this topic.")
+                .send-discussion
+                    button.btn.btn-info.send-discussion-btn send
+    #discussion-search-box
+        form(action="/discussions-list" method="GET")
+            table
+                tr
+                    td
+                        input.form-control.discussion-search-bar(placeholder='Search a discussion here' name="q");
+                    td
+                        button.btn.btn-info.discussion-search-btn Go
+    #discussion-wrapper
+        - var _discussions = JSON.parse(discussions)
+        - for (var i=0;i< _discussions.length;i++)
+            mixin discussionHost(_discussions[i])
+    #pager
+        include includes/pager
+        
+
+        

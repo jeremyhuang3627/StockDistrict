@@ -1,0 +1,244 @@
+.tabs > DIV {
+	/*border-top: 1px solid #c7c7c7*/
+	margin-top: 10px;
+	background-color:white;
+/*	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1); */
+	/*border-bottom: 4px solid #E95855 !important;*/
+}
+
+.tabs > DIV H3 {
+	border-bottom: 4px solid #E5E5E5 !important;
+	color: #ccc !important;
+	font-weight: 300;
+	line-height: 186px !important;
+}
+
+.tabs LI {
+	background: white;
+	border-bottom: 4px solid #E5E5E5;
+	margin-right: 10px;
+}
+
+.tabs A {
+	color: #ccc;
+	display: block;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 14px 24px;
+	text-decoration: none;
+}
+
+.tabs LI:hover {
+	background: #adc5fb;
+	border-bottom: 4px solid #5979c1;
+}
+
+.tabs LI:hover A {
+	color: white;
+}
+
+.tabs li
+{
+	display: inline-block;
+}
+
+.tabs{
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 20px;
+}
+
+.blocks
+{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.main-tab
+{
+	width: 700px;
+	margin-top: 100px;
+}
+
+.content-tab {
+min-height: 600px;
+width: 700px;
+overflow: auto;
+}
+
+.personal-info
+{
+	width: 80%;
+	margin: 0 auto;
+	padding-top:20px; 
+	font-size: 20px;
+}
+
+input.username{
+	width: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#my-awesome-dropzone
+{
+	width: 100%;
+	min-height: 200px;
+	background-color: inherit;
+}
+
+.dropzone .dz-default.dz-message
+{
+	width: 200px;
+	position: inherit;
+	margin: 0;
+	left: -5%;
+	top: 0%;
+	margin-top: 50px;
+}
+
+.dropzone .dz-default.dz-message span{
+	display: block;
+}
+
+.tabs .small{
+	width: 80px;
+	height: 80px;
+}
+
+.tabs .small A{
+	padding: 0px 5px;
+	font-size: 15px;
+}
+
+#originPic{
+	text-align: center;
+	padding: 20px 0px;
+}
+
+#upload, #originPic
+{
+	width: 210px;
+}
+
+.self_description_body textarea
+{
+	display: block;
+	border: 1px dotted;
+	margin-top: 20px;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.self_description_body
+{
+	display: block;
+	overflow: auto;
+}
+
+.self_description
+{
+	float: right;
+	width: 300px;
+	margin-top: 80px;
+	height: 100px;
+	margin-right: 50px;
+}
+
+.self_description a{
+	width: 20px;
+	height: 20px;
+}
+
+.personal-info
+{
+	float: left;
+	width: 350px;
+}
+
+.personal-info .p-info-wrapper
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 210px;
+}
+
+.self_description
+{
+	font-size: 20px;
+}
+
+.self_head
+{
+	text-align: center;
+}
+
+button.save-info
+{
+	float: right;
+	margin-right: 50px;
+	margin-top: 50px;
+}
+
+.dotted_border
+{
+	border: 2px dotted;
+	border-color: #bdc3c7;
+}
+
+.short-input
+{
+	width: 300px;
+	margin: 10px 0px;
+}
+
+.email-pw-wrapper input{
+	margin: 10px 0px;
+}
+
+.password-box, .email-change,.msg-content
+{
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: auto;
+	margin-top: 50px;
+}
+
+.password-box .pw-title,.email-change .email-title
+{
+	font-size:25px;
+	width: 100%;
+}
+
+.msg-title span
+{
+	font-size:20px;
+}
+
+.msg-content .msg-pw
+{
+	margin: 10px 0px;
+}
+
+.password-box .pw-input, .email-change .email-current,.email-change .email-input, .msg-content .msg-input
+{
+	margin-top: 20px;
+}
+
+.err-msg
+{
+	float: left;
+	padding-left: 5px;
+}
+
+#block1 .response{
+	margin-top: 20px;
+}
+
+#block1 .ajax-loader{
+	margin-top: 10px;
+}

@@ -1,0 +1,121 @@
+.discussion{
+	width:600px;
+	height: 150px;
+	border:1px solid;
+	border-color:#f1f1f1; 
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+}
+
+.discussion a:hover{
+	color: inherit; /*cancel the hover text effects */
+}
+.discussion:hover{
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px #888;
+box-shadow: 0 0 5px #888;
+}
+
+.discussion-upper,.discussion-lower
+{
+	width:100%;
+}
+
+.discussion-upper
+{
+	height: 70%;
+}
+
+.discussion-upper .host
+{
+	float: left;
+	width: 20%;
+}
+
+.discussion-upper .host .host-img, .discussion-upper .host .host-info .user-info, .discussion-upper .host .host-info .rep
+{
+	text-align: center;
+}
+
+.discussion-upper .discussion-details{
+	float: right;
+	width: 80%;
+	height: 100%;
+}
+
+.discussion-upper .discussion-details .discussion-topic
+{
+	padding-top:5px;
+	height: 30%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+
+.discussion-upper .discussion-details .discussion-opening
+{
+	height: 70%;
+	padding-top:5px;
+}
+
+.discussion-upper .discussion-details .discussion-topic span
+{
+	font-size: 17px;
+}
+
+.discussion-lower
+{
+	height: 30%;
+}
+
+#init-discussion
+{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.discussion-box
+{
+	display: block;
+	position: inherit;
+	margin: 0px auto;
+	width: 700px;
+}
+
+.discussion-box .essay-title-editor
+{
+	height: 26px;
+}
+
+.discussion-box button{
+	height: 25px;
+	padding: 2px 5px;
+	float: right;
+	margin: 5px 0px;
+}
+
+#discussion-builder
+{
+	width:100%;
+	display: none;
+}
+
+.discussion-search-bar
+{
+	width: 300px;
+}
+
+#discussion-search-box
+{
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 350px;
+}
+
+
+.discussion-search-btn
+{
+	margin-left: 5px;
+}
+

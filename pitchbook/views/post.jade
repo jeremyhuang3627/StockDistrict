@@ -1,0 +1,46 @@
+#post-wrapper
+   - var _posts = JSON.parse(posts)
+   - for (var i in _posts)
+    .post
+        .header-pic
+            img.shadow(src='/images/icons/png/avatar.png')
+        .status(id='#{_posts[i]._id}')
+            .post-owner
+                a(href='#') #{_posts[i].owner_fn}
+            .post-body.wrapword
+                p !{_posts[i].body}
+            .expand
+                a Expand
+            .collapse
+                a Collapse
+            .meta
+                .time-stamp
+                    span #{_posts[i].time_stamp}
+                .ops
+                    a.share-post Share
+                    a.comment Comment
+                    a.like Like
+                    a.fav Add to Favorites
+            .comments-append
+                    ul
+                       - for (var j in _posts[i].comments)
+                         li 
+                            .comment-append-pic
+                                img.shadow(src='/images/icons/png/avatar_small.png')
+                            .comment-append-wrapper
+                                .comment-owner
+                                    span #{_posts[i].comments[j].owner_fn}
+                                .comment-body
+                                    span #{_posts[i].comments[j].body}
+            .comment-box-wrapper(style="display:none")
+                    .input-wrapper
+                        textarea.comment-box(placeholder="Leave a comment")
+                    .msg-controls
+                        a.ticker 
+                            // overlay with #b0b0b0
+                            img(src='/images/icons/png/ticker.png') 
+                        a.sticker
+                            img(src='/images/icons/png/pitch.png')
+                        a.tag
+                            img(src='/images/icons/png/add_user.png')
+                        button.btn.btn-info.send-comment send

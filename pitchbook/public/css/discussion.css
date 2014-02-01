@@ -1,0 +1,140 @@
+
+#host-wrapper, #add-comment-box, #discussion-posts{
+	margin-top: 80px;
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto; 
+}
+
+.host-header,.cmt-main,.cmt-reply{
+	overflow: auto;
+}
+
+.host-img,.hot-name
+{
+	text-align: center;
+}
+
+.host-img img
+{
+	width: 50px;
+	height: auto;
+}
+
+.host-info{
+	width: 20%;
+	float: right;
+	margin-top: 10px;
+	padding: 8px 0px;
+}
+
+.host-topic{
+	font-size: 25px;
+}
+
+.discussion-cmt-box{
+	display: block;
+	width: 100%;
+	position: inherit;
+	height: 300px;
+}
+
+.host-content{
+	margin-top: 10px;
+	font-size: 17px;
+}
+
+.discussion-cmt-btn
+{
+	height: 25px;
+	padding: 2px 5px;
+	float: right;
+	margin: 5px 0px;
+}
+
+.cmt-main .user-info
+{
+	float: left;
+}
+
+.user-info .user-img,.user-info .user-fn
+{
+	text-align: center;
+}
+
+.user-img img
+{
+	width: 50px;
+	height: auto;
+}
+
+.cmt
+{
+	border-bottom: 1px solid;
+	border-color:#f1f1f1;
+}
+
+.meta input, .meta .reply-link
+{
+	float: right;
+}
+
+.meta .reply-link
+{
+	margin-left: 5px;
+}
+
+.meta .time-stamp
+{
+	float: left;
+}
+
+.cmt-main .cmt-content
+{
+	float: left;
+}
+
+.reply-box
+{
+	height: 100px;
+	width: 100%;
+	display: none;
+}
+
+.editor-wrapper
+{
+	height: 80%;
+	width: 100%;
+}
+
+.reply-box .reply-editor
+{
+	height: 70px;
+	width: 60%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	float: right;
+	margin-right: 0px;
+}
+
+a.send-reply
+{
+	float: right;
+	margin-right: 5px;
+}
+
+.cmt a{
+	cursor: pointer;
+}
+
+.reply
+{
+	float: right;
+	width: 600px;
+	border-bottom: 1px solid;
+	border-color:#f1f1f1;
+}
+
+.reply a{
+	color: #3498DB;
+}

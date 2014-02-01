@@ -1,0 +1,35 @@
+mixin userBox(user)
+	.user-wrapper.border(id='#{user._id}')
+		a(href='/user?id=#{user._id}')
+			.img-name
+				.img
+					img.shadow(src="#{user.image_dir_resized}")
+				.name #{user.fn}
+				.stats
+					.rep Rep #{user.popularity}
+					.followers Followers #{user.followed_by.length}
+		.details
+			.bio
+				.bio-title Bio
+				.bio-detail #{user.abt}
+			.follow-btn-wrapper
+				if user.followed
+					button.btn.btn-info.follow-btn(disabled=true) followed
+				else
+					button.btn.btn-info.follow-btn follow
+extends profile-layout
+
+block widget
+	script(src='/js/follow.js') 
+	link(rel='stylesheet', href='/css/search.css')
+	#results
+		case type
+			when "activities"
+				include includes/post
+			when "users"
+				- var _users = users
+				- for(var i=0;i<_users.length;i++)
+					+userBox(_users[i])
+	#pager
+		include includes/pager
+

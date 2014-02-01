@@ -1,0 +1,85 @@
+mixin pager(current,end,url,type)
+    if current != 1
+        a(href='#{url}?p=#{current - 1}&t=#{type}')
+            span.prev Prev
+    if current < 5 && end >= 5
+        - for(var i=1;i<=5;i++)
+            if i == current
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum.current #{i}
+            else
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum #{i}
+        span.page.dots ...
+        a(href='#{url}?p=#{end}&t=#{type}')
+            span.pageNum #{end}
+    else if current < 5 && end < 5
+        - for(var i=1;i<=end;i++)
+            if i == pageData.current
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum.current #{i}
+            else
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum #{i}
+    else
+        a(href='#{url}?p=1&t=#{type}')
+            span.pageNum 1
+        span.page.dots ...
+        - for(var i=current-2;i <= current + 2;i++)
+            if i == current
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum.current #{i}
+            else
+                a(href='#{url}?p=#{i}&t=#{type}')
+                    span.pageNum #{i}
+        span.page.dots ...
+        a(href='#{url}?p=#{end}&t=#{type}')
+            span.pageNum #{end}
+        if current != end && end != 0
+            a(href='#{url}?p=#{current + 1}&t=#{type}')
+                span.pageNum Next
+
+mixin userBox(user,type)
+    .user-wrapper.border(id='#{user._id}')
+        a(href='/user?id=#{user._id}')
+            .img-name
+                .img
+                    img.shadow(src="#{user.image_dir_resized}")
+                .name #{user.fn}
+                .stats
+                    .rep Rep #{user.popularity}
+                    .followers Followers #{user.followed_by.length}
+        .details
+            .bio
+                .bio-title Bio
+                .bio-detail #{user.abt}
+            .follow-btn-wrapper
+                if type == "follower"
+                    button.btn.btn-info.follow-btn follow
+                else if type == "following"
+                    button.btn.btn-info.unfollow-btn unfollow
+extends profile-layout
+
+block widget
+    script(src='/js/follow.js')
+    link(rel='stylesheet', href='/css/search.css')
+    style
+        #count{
+         width:35%;
+         margin-left:auto;
+         margin-right:auto;
+         margin-top:10px;
+        }
+    #count
+        if type == "following"
+            img(src='/images/icons/png/following.png')
+            span  Number of people you are following: #{users.length}
+        else if type == "follower"
+            img(src='/images/icons/png/profile.png')
+            span  Number of followers: #{users.length}
+    #results
+        - var _users = users
+        - for(var i=0;i<_users.length;i++)
+            +userBox(_users[i],type)
+    #pager
+        +pager(pageData.current,pageData.end,pageData.url,type)

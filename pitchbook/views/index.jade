@@ -1,0 +1,81 @@
+extends layout
+
+block content
+    script(src='/js/home.js')
+    #wrapper-pb
+        if login_err != undefined
+            #login-err-msg #{login_err}
+        .menu-pb
+            .menuwrapper
+                .title
+                    h3.name Stock-Notes
+                .login-pb
+                    form.loginform(method='POST' action='/login')
+                        table
+                            tr
+                                td
+                                    input.form-control.login-user(type="text" placeholder="Email" name = "username")
+                                td
+                                    input.form-control.login-pass(type="password" placeholder="password" name="password")
+                                td
+                                    button.btn.btn-inverse.login-btn login
+                                td
+                                    a(href='/forgetPass').fgt-pw-btn forget password?
+                            tr
+                                td
+                                    .login-email-err-msg
+                                td
+                                    .login-pass-err-msg
+                                td
+                        
+        .middle-pb
+            .ads
+                .slogan A social network for all investors. Free.
+                .ad-item
+                    .icon
+                        img(src='/images/icons/png/tie.png')
+                    .ad-words  Share your investment ideas.
+                .ad-item
+                    .icon
+                        img(src='/images/icons/png/comment.png')
+                    .ad-words  Meet other smart investors.
+                .ad-item
+                    .icon
+                        img(src='/images/icons/png/trophy.png')
+                    .ad-words  Win reputation.
+                .ad-item
+                    .icon
+                        img(src='/images/icons/png/statistic.png')
+                    .ad-words  Follow most popular stocks.
+                .ad-item
+                    .icon
+                        img(src='/images/icons/png/news-feed.png')
+                    .ad-words  Get customized news feed.
+            .signup-wrapper
+                .signup-pb
+                    a.btn.btn-inverse.fb-login(href='/auth/facebook') Facebook Login
+                    a.btn.btn-inverse.twt-login(href='/auth/twitter') Twitter Login
+                    p Don't have an account ? Sign up here.
+                    form.signup-form(method='POST' action='/signup')
+                        .fn-input
+                            input.form-control.firstname(type='text' placeholder='Firstname' name='fn')
+                            .err-msg
+                        .ln-input
+                            input.form-control.lastname(type='text' placeholder='Lastname' name='ln')
+                            .err-msg
+                        .email-input
+                            input.form-control.signup-email(type='email' placeholder='Enter your email address' name='email')
+                            .err-msg
+                        .pw-input
+                            input.form-control.signup-pass(type='password' placeholder='Enter your password' name='pass')
+                            .err-msg
+                    table
+                        tr
+                            td
+                                button.btn.btn-inverse.signup-btn Sign up
+                            td 
+                                .ajax-loader
+                                    img(src='/images/icons/gif/snake.gif')
+                                .server-res
+    footer.site-footer Copyright @ 2014 Jeremy Huang Production. All rights reserved.
+

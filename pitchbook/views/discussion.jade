@@ -1,0 +1,60 @@
+mixin dis_cmt(cmt)
+    .cmt(id='#{cmt._id}')
+        .cmt-main
+            .user-info
+                .user-img
+                    img.shadow(src='#{cmt.user_image_dir_resized}')
+                .user-fn(id='#{cmt.user_id}') #{cmt.user_fn}
+            .cmt-content 
+                .cmt-body !{cmt.body}
+        .cmt-reply
+            - var replies = cmt.comments
+            - for (var i=0;i<replies.length;i++)
+                .reply !{replies[i].body} 
+                    a(href="/user?id='#{replies[i].user_id}'") - #{replies[i].user_fn} 
+                    span.reply-time #{replies[i].time_stamp.toLocaleDateString() + " " +replies[i].time_stamp.toLocaleTimeString()}
+        .meta
+            .time-stamp #{cmt.time_stamp}
+            a.reply-link#add Add comment
+        .reply-box
+            .editor-wrapper
+                .reply-editor.border(contenteditable="true")
+            a.send-reply Send
+
+extends layout
+
+block content
+    link(rel='stylesheet', href='/css/discussion.css')
+    script(src='/js/discussion.js')
+    .wrapper-pb
+        include includes/topbar
+        #host-wrapper
+            .host-header
+                .host-topic(id="#{discussion._id}")
+                    span.topic Topic: 
+                    span.topic-details #{discussion.topic}
+            .host-content #{discussion.opening}
+            .host-info.shadow
+                .host-img
+                    img.shadow(src="#{discussion.user_image_dir_resized}")
+                .hot-name(id="#{discussion.user_id}") #{discussion.user_fn}
+        #add-comment-box
+            .editor-box.discussion-cmt-box
+                .editor-wrapper
+                    .editor-toolbar
+                        .tools
+                            a(data-edit='bold') B
+                            a(data-edit='underline') U
+                            a.sticker(style="position:relative;bottom:2px;")
+                                img(src="/images/icons/png/sticker_small.png");
+                            a.ticker
+                                img(src='/images/icons/png/ticker.png')
+                    .editor(contenteditable="true" data-ph="Write something about this topic.")
+                    .send-discussion-cmt
+                        button.btn.btn-info.discussion-cmt-btn send
+        #discussion-posts
+            - var cmts = discussion.discussion;
+            - for(var i=cmts.length-1;i>=0;i--)
+                +dis_cmt(cmts[i])
+
+

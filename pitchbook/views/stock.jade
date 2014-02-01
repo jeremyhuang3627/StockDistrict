@@ -1,0 +1,129 @@
+extends profile-layout
+
+block widget
+    script(src='http://www.google.com/jsapi')
+    script(src='/js/stock.js')
+    script(src='/js/watch-list.js')
+    link(rel='stylesheet', href='/css/stock.css')
+    .stock-info.border
+        h3 #{ticker}  
+            span.company
+                img(src='/images/icons/gif/ajax-loader.gif')
+        .bid-ask
+            span.ask_title Ask
+            span.ask
+                img(src='/images/icons/gif/ajax-loader.gif')
+            span.bid_little Bid
+            span.bid
+                img(src='/images/icons/gif/ajax-loader.gif')
+        .fdm-data
+            table.fdm-data-table
+                tr
+                    td.open
+                        span.data-title Open
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.prev-close
+                        span.data-title Prev. Close
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.avg-vol
+                        span.data-title Avg Vol.
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.changeInPercentage
+                        span.data-title %Change
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.last_trading_date
+                        span.data-title Last trading date
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                tr
+                    td.eps
+                        span.data-title EPS
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.dividend-share
+                        span.data-title Dividends Per Share
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.peg
+                        span.data-title PEG ratio
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.pe
+                        span.data-title P/E ratio 
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.ebitda
+                        span.data-title EBITDA
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                tr
+                    td.eps_curr_y_est
+                        span.data-title EPS est. current year
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.dvd-date
+                        span.data-title Dividend Pay Date
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.dvd-yld
+                        span.data-title Dividend Yield
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.market-cap
+                        span.data-title Market Cap.
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.price-sales
+                        span.data-title Price To Sales
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')  
+                tr
+                    td.price-book
+                        span.data-title Price To Sales
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.eps_next_q_est
+                        span.data-title EPS est. next quarter
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.short-ratio
+                        span.data-title Short ratio 
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.perChg50MA
+                        span.data-title % Chg 50 MA
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.perChg200MA
+                        span.data-title % Chg 200 MA
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                tr
+                    td.dayrange
+                        span.data-title Days Range
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.eps_next_y_est
+                        span.data-title EPS est. next year
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.MA50
+                        span.data-title 50 day MA
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+                    td.MA200
+                        span.data-title 200 day MA
+                        span.value
+                            img(src='/images/icons/gif/ajax-loader.gif')
+    #news-feed-box
+    #chart_div(style='width: 800px; height: 240px;display:none;')
+    - var acts = JSON.parse(activities)
+    - if (acts.length > 0)
+     include includes/post
+    - else
+     .no_content
+        span.no_content_msg No post matched your search TT

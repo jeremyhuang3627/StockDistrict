@@ -1,0 +1,72 @@
+style
+    body{
+        background-color: #F0F0F0;
+    }
+    #chart_container {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    #chart {
+            position: relative;
+            left: 40px;
+    }
+    #y_axis {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+    }
+script(src='http://www.google.com/jsapi')
+script(src='/js/stock.js')
+.wrapper-pb-account
+    include topbar
+    .globalContainer-account
+        .user-info-account
+            .profile-account
+                a(href="/editInfo").pic
+                    img.shadow(src='#{user.image_dir_resized}')
+                    if type == "self"
+                        span Change
+                        a(href="/editInfo").btn.btn-default.edit-info Edit Info
+            .info-account
+                .stats
+                    ul
+                        li 
+                            span.name #{user.fn}
+                        li 
+                            span.holdings #{user.watch_list.length} stocks
+                        li 
+                            span.rep #{user.popularity} Reputation
+                        li 
+                            span.followers #{user.followed_by.length} followers
+                .info 
+                    span.bio 
+                        strong Bio: 
+                    span #{user.abt}
+        #chart_div(style='width: 800px; height: 240px;display:none;')
+        .watch-list-tbl.watch-list-tbl-account
+            table.watch-list-account
+                thead
+                    tr
+                        th Ticker
+                        th Bid
+                        th Ask
+                        th %Change
+                        th Volume
+                - var stocks_array = stocks
+                - for (var i=0;i<stocks_array.length;i++)
+                  tr.stock-item
+                    td 
+                        span.symbol #{stocks_array[i]}
+                    td 
+                        span.bid ...
+                    td 
+                        span.ask ...
+                    td 
+                        span.change ...
+                    td 
+                        span.vol ...
+                    td 
+                        button.getChart-btn details
+        .user-post-account
+            include post

@@ -1,0 +1,70 @@
+extends plain-layout
+
+block content
+    style
+        .forget-pass-input
+        {
+          width: 380px;
+          margin-left:auto;
+          margin-right:auto;
+        }
+
+        .forget-pass-input table
+        {
+        width: 100%;
+        }
+
+        .forget-pass-btn
+        {
+            float:right;
+            padding:3px 5px;
+            font-size:13px;
+        }
+
+        .forget-pass-email
+        {
+            margin:0px;
+        }
+
+        .ajax-loader
+        {
+            text-align:center;
+            margin-top:20px;
+        }
+    script
+        $(function(){
+            $(".forget-pass-btn").on("click",function(){
+                var e = $(".forget-pass-email").val();
+                if(validateEmail(e)){
+                    $.ajax({
+                        url:"/forgetPassword",
+                        type:"POST",
+                        data:{
+                            email:e
+                        },
+                        beforeSend:function(){
+                            $(".forget-pass-input .ajax-loader").show()
+                        },
+                        success:function(){
+                            $(".forget-pass-input .ajax-loader").fadeOut("fast",function(){
+                                $(".response").html("<p>A new password has been sent to your email address.</p>");
+                            })
+                        }
+                    });
+                }else{
+                    $(".response").html("<p>This does not look like a valid email.</p>");
+                }
+
+            });
+        });
+    .forget-pass-input
+        table
+            tr
+                td 
+                    input.form-control.forget-pass-email(type="text" placeholder="Email" name = "username")
+                td
+                    button.btn.btn-info.forget-pass-btn Send Email
+        .response
+        .ajax-loader
+            img(src='/images/icons/gif/snake.gif')
+            

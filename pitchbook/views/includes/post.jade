@@ -1,0 +1,102 @@
+mixin pre_post(act)
+  .post.pre_post
+    .header-pic
+      img.shadow(src='#{act.user_image_dir_resized}')
+    .status(id='#{act._id}' data-type='#{act.type}')
+      .post-body.wrapword
+        span 
+          a(href='/user?id=#{act.user_id}') #{act.user_fn} 
+            if block
+              block
+            else
+              p No content provided.
+      .time-stamp #{act.time_stamp.toLocaleDateString() + " " + act.time_stamp.toLocaleTimeString()}
+mixin post(act)
+  .post.full_post
+    .header-pic
+        img.shadow(src='#{act.user_image_dir_resized}')
+    .status(id='#{act._id}' data-type='#{act.type}')
+        .post-owner
+          a(href='/user?id=#{act.origin_user_id}') #{act.origin_user_fn}
+        .post-body.wrapword
+          !{act.post.body}
+        .expand
+          a Expand
+        .collapse
+          a Collapse
+        .meta
+          .time-stamp
+            span #{act.time_stamp}
+          .ops
+            if act.shared
+              a.shared Shared
+            else
+              a.share-post Share
+            a.comment Comment
+            if act.liked
+              a.liked Liked
+            else
+              a.like Like
+            if act.fav
+              a.fav-added Added
+            else
+              a.fav Add to Favorites
+        .comments-append
+            ul
+               - for (var j=0;j< act.post.comments.length;j++)
+                 li 
+                    .comment-append-pic
+                        img.shadow(src='#{act.post.comments[j].owner_image_dir_resized}')
+                    .comment-append-wrapper
+                        .comment-owner
+                            span #{act.post.comments[j].owner_fn}
+                        .comment-body
+                            span #{act.post.comments[j].body}
+        .comment-box-wrapper(style="display:none")
+            .input-wrapper
+                textarea.comment-box(placeholder="Leave a comment")
+            .msg-controls
+                a.ticker 
+                    // overlay with #b0b0b0
+                    img(src='/images/icons/png/ticker.png') 
+                a.sticker
+                    img(src='/images/icons/png/pitch.png')
+                a.tag
+                    img(src='/images/icons/png/add_user.png')
+                button.btn.btn-info.send-comment send
+#post-wrapper
+    - var acts = activities
+    - for (var i=0;i<acts.length;i++)
+      case acts[i].type
+        when "add_stock"
+          +pre_post(acts[i])
+            span added #{acts[i].stock} into watchlist
+        when "delete_stock"
+          +pre_post(acts[i])
+            span removed #{acts[i].stock} from watchlist
+        when "like"
+          +pre_post(acts[i])
+            span liked this.
+          +post(acts[i])
+        when "comment"
+          +pre_post(acts[i])
+            span commented on this.
+          +post(acts[i])
+        when "publish"
+          +post(acts[i])
+        when "share"
+          +pre_post(acts[i])
+            span shared this.
+          +post(acts[i])
+        when "pitch"
+          +pre_post(acts[i])
+            span gave a pitch.
+          +post(acts[i])
+        when "fav"
+          +pre_post(acts[i])
+            span added this to favorites.
+          +post(acts[i])
+          
+            
+
+      

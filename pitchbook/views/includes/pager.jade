@@ -1,0 +1,84 @@
+mixin pager(current,end,query,url,type)
+    if url == "/search"
+        if current != 1
+            a(href='#{url}?q=#{query}&p=#{current - 1}&t=#{type}')
+                span.prev Prev
+        if current < 5 && end >= 5
+            - for(var i=1;i<=5;i++)
+                if i == current
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum #{i}
+            span.page.dots ...
+            a(href='#{url}?q=#{query}&p=#{end}&t=#{type}')
+                span.pageNum #{end}
+        else if current < 5 && end < 5
+            - for(var i=1;i<=end;i++)
+                if i == pageData.current
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum #{i}
+        else
+            a(href='#{url}?q=#{query}&p=1&t=#{type}')
+                span.pageNum 1
+            span.page.dots ...
+            - for(var i=current-2;i <= current + 2;i++)
+                if i == current
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}&t=#{type}')
+                        span.pageNum #{i}
+            span.page.dots ...
+            a(href='#{url}?q=#{query}&p=#{end}&t=#{type}')
+                span.pageNum #{end}
+        if current != end && end != 0
+            a(href='#{url}?q=#{query}&p=#{current + 1}&t=#{type}')
+                span.pageNum Next
+    else if url == "/discussions-list"  
+        if current != 1
+            a(href='#{url}?q=#{query}&p=#{current - 1}')
+                span.prev Prev
+        if current < 5 && end >= 5
+            - for(var i=1;i<=5;i++)
+                if i == current
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum #{i}
+            span.page.dots ...
+            a(href='#{url}?q=#{query}&p=#{end}')
+                span.pageNum #{end}
+        else if current < 5 && end < 5
+            - for(var i=1;i<=end;i++)
+                if i == pageData.current
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum #{i}
+        else
+            a(href='#{url}?q=#{query}&p=1')
+                span.pageNum 1
+            span.page.dots ...
+            - for(var i=current-2;i <= current + 2;i++)
+                if i == current
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum.current #{i}
+                else
+                    a(href='#{url}?q=#{query}&p=#{i}')
+                        span.pageNum #{i}
+            span.page.dots ...
+            a(href='#{url}?q=#{query}&p=#{end}')
+                span.pageNum #{end}
+        if current != end && end != 0
+            a(href='#{url}?q=#{query}&p=#{current + 1}')
+                span.pageNum Next
+
+- var _pageData = pageData
++pager(parseInt(_pageData.current), parseInt(_pageData.end),_pageData.query,_pageData.url,_pageData.searchtype) 
